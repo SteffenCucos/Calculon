@@ -1,5 +1,7 @@
 package calculon;
 
+import Expressions.Expression;
+
 public class Main {
 	
 	public static void main(String[] args) throws Exception {

@@ -1,10 +1,10 @@
-package calculon;
+package Expressions;
 
 import java.math.BigDecimal;
 
 public class UnaryOperation extends OperationExpression {
 
-	enum UnaryOperator implements Operator {
+	public enum UnaryOperator implements Operator {
 		BRACKET,
 		SIN,
 		COS,

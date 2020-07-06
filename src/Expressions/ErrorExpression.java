@@ -1,4 +1,4 @@
-package calculon;
+package Expressions;
 
 import java.math.BigDecimal;
 

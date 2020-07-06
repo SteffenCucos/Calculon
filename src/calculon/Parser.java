@@ -3,7 +3,13 @@ package calculon;
 import java.util.HashMap;
 import java.util.Map;
 
-import calculon.BinaryOperation.BinaryOperator;
+import Expressions.BinaryOperation;
+import Expressions.ErrorExpression;
+import Expressions.Expression;
+import Expressions.Operator;
+import Expressions.UnaryOperation;
+import Expressions.ValueExpression;
+import Expressions.BinaryOperation.BinaryOperator;
 
 public class Parser {
 		
@@ -85,7 +91,6 @@ public class Parser {
 		put(State.OPEN_EXPRESSION, new HashMap<Character, State>() {{
 			put('-', State.BUILDING_NUMBER);
 			put('(', State.OPEN_EXPRESSION);
-			//put(')', State.CLOSE_EXPRESSION);
 			putAll(numberMatchingMap());
 			putAll(unaryMatchingMap());
 		}});
@@ -231,8 +236,6 @@ public class Parser {
 	}
 	
 	public Expression parseExpression(CharacterIterator characters, State initialState) {
-		
-
 		State curState = initialState;
 		Expression rootExpression = null;
 		

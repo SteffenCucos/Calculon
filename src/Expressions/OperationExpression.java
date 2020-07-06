@@ -1,4 +1,4 @@
-package calculon;
+package Expressions;
 
 public abstract class OperationExpression implements Expression {
 

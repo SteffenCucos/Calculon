@@ -1,11 +1,11 @@
-package calculon;
+package Expressions;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class BinaryOperation extends OperationExpression {
 
-	enum BinaryOperator implements Operator {
+	public enum BinaryOperator implements Operator {
 		PLUS,
 		MINUS,
 		MULTIPLY,
