@@ -4,7 +4,22 @@ import java.util.Scanner;
 
 public class ConsoleInterface implements AutoCloseable {
 
-	Scanner scanner = new Scanner(System.in);
+	
+	private static ConsoleInterface singleton = null;
+	private Scanner scanner;
+	
+	
+	private ConsoleInterface() {
+		scanner = new Scanner(System.in);
+	}
+	
+	public static ConsoleInterface getConsole() {
+		if(singleton == null) {
+			singleton = new ConsoleInterface();
+		}
+		
+		return singleton;
+	}
 	
 	public String getInput(String prompt) {
 		System.out.println(prompt);
@@ -19,13 +34,5 @@ public class ConsoleInterface implements AutoCloseable {
 	@Override
 	public void close() throws Exception {
 		scanner.close();
-	}
-	
-	static void cleanup(ConsoleInterface console) {
-		try {
-			console.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 }

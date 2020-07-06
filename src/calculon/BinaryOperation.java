@@ -66,7 +66,6 @@ public class BinaryOperation extends OperationExpression {
 			right.left = toSwap;
 			right.right = new BinaryOperation(rLeft, rRight, rOperator);
 		}
-
 	}
 	
 	@Override
